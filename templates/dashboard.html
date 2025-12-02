@@ -22,20 +22,20 @@
   <body>
     <!-- Header -->
     <header>
-    <div class="container">
-      <div class="company-logo">
-        <div class="logo-icon">C</div>
-        <div>
-          <div class="logo-text">CAPITAL</div>
-          <div class="logo-subtext">DIGITAL</div>
+      <div class="container">
+        <div class="company-logo">
+          <div class="logo-icon">C</div>
+          <div>
+            <div class="logo-text">CAPITAL</div>
+            <div class="logo-subtext">DIGITAL</div>
+          </div>
+        </div>
+
+        <div class="icon-right" id="menuToggle">
+          <i class="ri-menu-line" id="openMenu"></i>
+          <i class="ri-close-line" id="closeMenu"></i>
         </div>
       </div>
-
-      <div class="icon-right" id="menuToggle">
-        <i class="ri-menu-line" id="openMenu"></i>
-        <i class="ri-close-line" id="closeMenu"></i>
-      </div>
-    </div>
     </header>
 
     <!-- Sidebar -->
@@ -55,22 +55,22 @@
       </div>
 
       <nav class="nav-menu">
-        <a href="#" class="nav-item active">
+        <a href="dashboard.html" class="nav-item active">
           <i class="ri-home-4-line"></i>
           Overview
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="account.html" class="nav-item">
           <i class="ri-wallet-3-line"></i>
           My Account
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="transactions.html" class="nav-item">
           <i class="ri-file-list-3-line"></i>
           Summary
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="transfer.html" class="nav-item">
           <i class="ri-exchange-funds-line"></i>
           Transfer Fund
         </a>
@@ -127,33 +127,37 @@
 
     <!-- Main Content -->
     <main class="main-content">
-      <div class="container-one container">       
+      <div class="container-one container">
         <div class="section-header">
           <div class="section-title-wrapper">
             <h2>Financial Overview</h2>
             <div class="title-underline"></div>
           </div>
-         <div style="display: flex; gap: 10px;">
-  
-          <button class="apply-btn">
-            Add Deposit
-            <i class="ri-arrow-right-line"></i>
-          </button>
-
-          <div class="select-container">
-            <button class="select-trigger" id="selectBtn">
-              Select Transfer
-              <i class="ri-arrow-down-s-line"></i>
+          <div style="display: flex; gap: 10px">
+            <button class="apply-btn">
+              Add Deposit
+              <i class="ri-arrow-right-line"></i>
             </button>
 
-            <div class="select-dropdown" id="selectDropdown">
-              <div class="select-option">Internal Wire <i class="ri-arrow-right-up-line"></i></div>
-              <div class="select-option">Droestic Wire <i class="ri-arrow-right-up-line"></i></div>
-              <div class="select-option">International Wire <i class="ri-arrow-right-up-line"></i></div>
+            <div class="select-container">
+              <button class="select-trigger" id="selectBtn">
+                Select Transfer
+                <i class="ri-arrow-down-s-line"></i>
+              </button>
+
+              <div class="select-dropdown" id="selectDropdown">
+                <div class="select-option">
+                  Internal Wire <i class="ri-arrow-right-up-line"></i>
+                </div>
+                <div class="select-option">
+                  Droestic Wire <i class="ri-arrow-right-up-line"></i>
+                </div>
+                <div class="select-option">
+                  International Wire <i class="ri-arrow-right-up-line"></i>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
         </div>
         <!-- Account Cards Grid -->
         <div class="dashboard-grid">
@@ -165,12 +169,11 @@
                   <div class="balance-avatar">AF</div>
                   <div>
                     <p class="balance-amount">Available Balance</p>
-                    <h2 class="balance-total">£241,570.00</h2>
+                    <h2 class="balance-total" id="balanceValue">£241,570.00</h2>
                     <p class="balance-name">Alder Franklin</p>
                   </div>
                 </div>
-                <!-- <i class="ri-eye-line"></i> -->
-                <i class="ri-eye-off-line"></i>
+                <i id="toggleBalance" class="ri-eye-off-line toggle-eye"></i>
               </div>
 
               <div class="crypto-info">
@@ -180,49 +183,18 @@
               </div>
 
               <div class="action-buttons">
-                <button class="action-btn">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M5 10l7-7m0 0l7 7m-7-7v18" />
-                  </svg>
+                <button class="action-btn" id="receiveBtn">
+                  <i class="ri-arrow-down-line"></i>
                   Receive
                 </button>
+
                 <button class="action-btn">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                  </svg>
+                  <i class="ri-arrow-right-up-line"></i>
                   Send
                 </button>
+
                 <button class="action-btn">
-                  <svg
-                    width="16"
-                    height="16"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                  </svg>
+                  <i class="ri-arrow-left-right-fill"></i>
                   Swap
                 </button>
               </div>
@@ -295,7 +267,7 @@
               <div class="save-inner">
                 <div class="account-indicator">
                   <!-- <div class="indicator-dot"></div> -->
-                  <input type="radio" checked>
+                  <input type="radio" checked />
                   <span style="font-size: 14px; font-weight: 500"
                     >Alder Franklin (******89654)</span
                   >
@@ -329,7 +301,7 @@
                 <div class="save-inner">
                   <div class="account-indicator">
                     <!-- <div class="indicator-dot"></div> -->
-                    <input type="radio" checked>
+                    <input type="radio" checked />
                     <span style="font-size: 14px; font-weight: 500"
                       >Business Loan</span
                     >
@@ -345,7 +317,7 @@
                 <div class="save-inner">
                   <div class="account-indicator">
                     <!-- <div class="indicator-dot"></div> -->
-                    <input type="radio" checked>
+                    <input type="radio" checked />
                     <span style="font-size: 14px; font-weight: 500"
                       >FICO® Score</span
                     >
@@ -597,11 +569,19 @@
               </div>
               <div class="card-content">
                 <div class="manager-header">
-                 <div class="avatar-group">
-                    <div class="avatar-small"><i class="ri-user-3-fill"></i></div>
-                    <div class="avatar-small"><i class="ri-user-3-fill"></i></div>
-                    <div class="avatar-small"><i class="ri-user-3-fill"></i></div>
-                    <div class="avatar-small"><i class="ri-user-3-fill"></i></div>
+                  <div class="avatar-group">
+                    <div class="avatar-small">
+                      <i class="ri-user-3-fill"></i>
+                    </div>
+                    <div class="avatar-small">
+                      <i class="ri-user-3-fill"></i>
+                    </div>
+                    <div class="avatar-small">
+                      <i class="ri-user-3-fill"></i>
+                    </div>
+                    <div class="avatar-small">
+                      <i class="ri-user-3-fill"></i>
+                    </div>
                   </div>
                 </div>
                 <div class="count-cover">
@@ -962,6 +942,163 @@
       </div>
     </main>
 
+    <!-- OVERLAY -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- RECEIVE MODAL -->
+    <div id="receiveModal" class="receive-modal">
+      <!-- HEADER -->
+      <div class="modal-header">
+        <h2>Receive Bitcoin</h2>
+        <button id="closeModalPopBtn" class="close-btn">&times;</button>
+      </div>
+
+      <!-- LOADER ROW -->
+      <div class="loader-row">
+        <span class="loader"></span>
+        <span>Awaiting Your Payment...</span>
+        <span id="timer">15:21</span>
+      </div>
+
+      <!-- MODAL BODY -->
+      <div class="modal-body">
+        <!-- BTC BALANCE -->
+        <div class="btc-balance-section">
+          <div class="btc-balance">0.0000 BTC</div>
+          <div class="balance-label">
+            Bitcoin Balance
+            <i class="ri-information-line"></i>
+          </div>
+        </div>
+
+        <!-- BTC PRICE -->
+        <div class="btc-price-row">
+          <div class="bitcoin-icon">₿</div>
+          <span>Bitcoin</span>
+          <span class="btc-price">1 BTC = $110,363.00 USD</span>
+        </div>
+
+        <!-- QR CODE -->
+        <div class="qr-box" id="qrcode"></div>
+
+        <!-- ADDRESS -->
+        <div class="address-section">
+          <div class="address-box">
+            <i class="ri-lock-line lock-icon"></i>
+            <input
+              id="btcAddress"
+              value="1JsusYzq2Z9gBWdCfVDZVeq8EMq"
+              readonly />
+            <button id="copyBtn" class="copy-btn" title="Copy Address">
+              <i class="ri-file-copy-line"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- WARNING -->
+        <div class="warning">
+          <i class="ri-error-warning-line warning-icon"></i>
+          <div class="warning-text">
+            Only send Bitcoin (BTC) to this address. Sending any other
+            cryptocurrency may lead to permanent loss.
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="modal-footer">
+          <a href="#" class="cant-pay">Can't Pay?</a>
+          <button class="close-modal-btn" id="closeModalBtn2">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- QR CODE LIBRARY -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+      const receiveBtn = document.getElementById("receiveBtn");
+      const modalPop = document.getElementById("receiveModal");
+      const overlay = document.getElementById("overlay");
+      const closeModalPopBtn = document.getElementById("closeModalPopBtn");
+      const closeModalBtn2 = document.getElementById("closeModalBtn2");
+      const timerEl = document.getElementById("timer");
+      const copyBtn = document.getElementById("copyBtn");
+      const btcAddress = document.getElementById("btcAddress");
+
+      let countdown = 921; // 15:21 in seconds
+      let countdownInterval;
+
+      // OPEN MODAL
+      receiveBtn.addEventListener("click", () => {
+        modalPop.classList.add("active");
+        overlay.classList.add("active");
+        generateQR();
+        startCountdown();
+      });
+
+      // CLOSE MODAL
+      function closeModal() {
+        modalPop.classList.remove("active");
+        overlay.classList.remove("active");
+        clearInterval(countdownInterval);
+        countdown = 921; // Reset countdown
+      }
+
+      closeModalPopBtn.addEventListener("click", closeModal);
+      closeModalBtn2.addEventListener("click", closeModal);
+      overlay.addEventListener("click", closeModal);
+
+      // COUNTDOWN TIMER
+      function startCountdown() {
+        // Clear any existing interval
+        if (countdownInterval) {
+          clearInterval(countdownInterval);
+        }
+
+        countdownInterval = setInterval(() => {
+          if (countdown <= 0) {
+            clearInterval(countdownInterval);
+            timerEl.textContent = "00:00";
+            return;
+          }
+
+          const minutes = Math.floor(countdown / 60);
+          const seconds = countdown % 60;
+          timerEl.textContent = `${minutes}:${seconds
+            .toString()
+            .padStart(2, "0")}`;
+          countdown--;
+        }, 1000);
+      }
+
+      // GENERATE QR CODE
+      function generateQR() {
+        const qrContainer = document.getElementById("qrcode");
+        qrContainer.innerHTML = ""; // Clear previous QR code
+
+        new QRCode(qrContainer, {
+          text: btcAddress.value,
+          width: 176,
+          height: 176,
+          colorDark: "#000000",
+          colorLight: "#ffffff",
+          correctLevel: QRCode.CorrectLevel.H,
+        });
+      }
+
+      // COPY FUNCTIONALITY
+      copyBtn.addEventListener("click", () => {
+        navigator.clipboard.writeText(btcAddress.value).then(() => {
+          const icon = copyBtn.querySelector("i");
+          icon.className = "ri-check-line";
+
+          setTimeout(() => {
+            icon.className = "ri-file-copy-line";
+          }, 2000);
+        });
+      });
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
@@ -1007,6 +1144,28 @@
             y: { display: false },
           },
         },
+      });
+    </script>
+
+    <script>
+      const toggleBtn = document.getElementById("toggleBalance");
+      const balanceValue = document.getElementById("balanceValue");
+
+      let isHidden = false;
+      const realBalance = balanceValue.innerText; // store the real balance
+
+      toggleBtn.addEventListener("click", () => {
+        isHidden = !isHidden;
+
+        if (isHidden) {
+          balanceValue.innerText = "£••••••••";
+          toggleBtn.classList.remove("ri-eye-off-line");
+          toggleBtn.classList.add("ri-eye-line");
+        } else {
+          balanceValue.innerText = realBalance;
+          toggleBtn.classList.remove("ri-eye-line");
+          toggleBtn.classList.add("ri-eye-off-line");
+        }
       });
     </script>
 

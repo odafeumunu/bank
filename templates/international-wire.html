@@ -49,22 +49,22 @@
       </div>
 
       <nav class="nav-menu">
-        <a href="#" class="nav-item">
+        <a href="dashboard.html" class="nav-item">
           <i class="ri-home-4-line"></i>
           Overview
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="account.html" class="nav-item">
           <i class="ri-wallet-3-line"></i>
           My Account
         </a>
 
-        <a href="#" class="nav-item">
+        <a href="transactions.html" class="nav-item">
           <i class="ri-file-list-3-line"></i>
           Summary
         </a>
 
-        <a href="#" class="nav-item active">
+        <a href="transfer.html" class="nav-item active">
           <i class="ri-exchange-funds-line"></i>
           Transfer Fund
         </a>
@@ -148,7 +148,9 @@
             </div>
 
             <h2>International Wire</h2>
-            <p>International Wire Transfer takes up to 24-72Hours to confirm.</p>
+            <p>
+              International Wire Transfer takes up to 24-72Hours to confirm.
+            </p>
           </div>
 
           <!-- Form Content -->
@@ -163,7 +165,9 @@
                 <div class="balance-information">
                   <div class="balance-title">Fiat Balance</div>
                   <div class="balance-amount">£241,570.00</div>
-                  <div class="balance-account">Alder Franklin (******09654)</div>
+                  <div class="balance-account">
+                    Alder Franklin (******09654)
+                  </div>
                 </div>
                 <div class="balance-check">
                   <i class="ri-checkbox-circle-fill"></i>
@@ -191,7 +195,10 @@
               <label class="form-label">Beneficiary Account Name *</label>
               <div class="input-with-icon">
                 <i class="ri-user-3-line"></i>
-                <input type="text" class="form-input" placeholder="Enter beneficiary's full name" />
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter beneficiary's full name" />
               </div>
             </div>
 
@@ -200,10 +207,10 @@
               <label class="form-label">Beneficiary Account Number *</label>
               <div class="input-with-icon">
                 <i class="ri-hashtag"></i>
-                <input type="text" class="form-input" placeholder="Enter account number" />
-                <button class="input-action-btn">
-                  <i class="ri-file-copy-line"></i>
-                </button>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter account number" />
               </div>
             </div>
 
@@ -212,7 +219,10 @@
               <label class="form-label">Bank Name *</label>
               <div class="input-with-icon">
                 <i class="ri-bank-line"></i>
-                <input type="text" class="form-input" placeholder="Enter bank name" />
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter bank name" />
               </div>
             </div>
 
@@ -221,7 +231,10 @@
               <label class="form-label">Bank Address *</label>
               <div class="input-with-icon">
                 <i class="ri-map-pin-line"></i>
-                <input type="text" class="form-input" placeholder="Enter bank address" />
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter bank address" />
               </div>
             </div>
 
@@ -259,7 +272,10 @@
               <label class="form-label">Swift Code *</label>
               <div class="input-with-icon">
                 <i class="ri-key-2-line"></i>
-                <input type="text" class="form-input" placeholder="Enter swift code" />
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter swift code" />
               </div>
             </div>
 
@@ -268,17 +284,20 @@
               <label class="form-label">IBAN Number *</label>
               <div class="input-with-icon">
                 <i class="ri-barcode-line"></i>
-                <input type="text" class="form-input" placeholder="Enter IBAN number" />
-                <button class="input-action-btn">
-                  <i class="ri-file-copy-line"></i>
-                </button>
+                <input
+                  type="text"
+                  class="form-input"
+                  placeholder="Enter IBAN number" />
               </div>
             </div>
 
             <!-- Warning Message -->
             <div class="warning-box">
               <i class="ri-error-warning-line"></i>
-              <span>International Bank Account Number Format varies by country</span>
+              <span
+                >International Bank Account Number Format varies by
+                country</span
+              >
             </div>
 
             <!-- Transaction PIN -->
@@ -286,7 +305,10 @@
               <label class="form-label">Transaction PIN *</label>
               <div class="input-with-icon">
                 <i class="ri-lock-password-line"></i>
-                <input type="password" class="form-input" placeholder="Enter your 4-10 digit PIN" />
+                <input
+                  type="password"
+                  class="form-input"
+                  placeholder="Enter your 4-10 digit PIN" />
                 <button class="input-action-btn">
                   <i class="ri-eye-line"></i>
                 </button>
@@ -298,14 +320,61 @@
               <i class="ri-send-plane-fill"></i>
               Continue to Transfer
             </button>
-            <button class="submit-btn secondary">
-              <i class="ri-arrow-left-line"></i>
-              Back to Dashboard
-            </button>
+            <a href="dashboard.html">
+              <button class="submit-btn secondary">
+                <i class="ri-arrow-left-line"></i>
+                Back to Dashboard
+              </button>
+            </a>
           </div>
         </div>
       </div>
     </main>
+
+    <script>
+      const quickButtons = document.querySelectorAll(".quick-amount-btn");
+      const amountInput = document.querySelector(".amount-input");
+
+      // Get the balance amount for MAX button
+      const maxBalanceText =
+        document.querySelector(".balance-amount").innerText;
+      const maxBalance = parseFloat(maxBalanceText.replace(/[£,]/g, ""));
+
+      quickButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active state from all buttons
+          quickButtons.forEach((b) => b.classList.remove("active"));
+
+          // Add active state to clicked one
+          btn.classList.add("active");
+
+          let value = btn.innerText.replace(/£/g, "").trim();
+
+          if (value.toUpperCase() === "MAX") {
+            // Insert max balance with formatting
+            amountInput.value = maxBalance.toLocaleString("en-GB", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            });
+          } else {
+            // Remove commas before converting
+            value = value.replace(/,/g, "");
+
+            const num = parseFloat(value);
+
+            amountInput.value = num.toLocaleString("en-GB", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            });
+          }
+        });
+      });
+
+      // Clear active buttons when user types manually
+      amountInput.addEventListener("input", () => {
+        quickButtons.forEach((b) => b.classList.remove("active"));
+      });
+    </script>
 
     <script src="../static/js/main.js"></script>
   </body>

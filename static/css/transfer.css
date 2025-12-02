@@ -244,6 +244,12 @@
   color: var(--blue-primary);
   border-color: var(--blue-primary);
 }
+.quick-amount-btn.active {
+  background: var(--blue-primary);
+  color: white;
+  border-color: var(--blue-primary);
+}
+
 
 /* Form Inputs */
 .input-with-icon {
