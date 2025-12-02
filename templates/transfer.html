@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account - Profile</title>
+
+    <!-- Remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/transfer.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="company-logo">
+          <div class="logo-icon">C</div>
+          <div>
+            <div class="logo-text">CAPITAL</div>
+            <div class="logo-subtext">DIGITAL</div>
+          </div>
+        </div>
+
+        <div class="icon-right" id="menuToggle">
+          <i class="ri-menu-line" id="openMenu"></i>
+          <i class="ri-close-line" id="closeMenu"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sideBar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="user-profile">
+          <div class="avatar">AF</div>
+          <div class="user-info">
+            <h3>Alder Franklin</h3>
+            <p>***** 09654</p>
+            <span class="status">
+              <span class="status-dot"></span>
+              <span class="status-text">Active</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-item">
+          <i class="ri-home-4-line"></i>
+          Overview
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-wallet-3-line"></i>
+          My Account
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-file-list-3-line"></i>
+          Summary
+        </a>
+
+        <a href="#" class="nav-item active">
+          <i class="ri-exchange-funds-line"></i>
+          Transfer Fund
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-fill"></i>
+          Deposit
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bill-line"></i>
+          Bill Pay
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-exchange-dollar-line"></i>
+          Loan
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-line"></i>
+          My Cards
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-user-3-line"></i>
+          Beneficiaries
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-question-answer-line"></i>
+          Help & Support
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-settings-3-line"></i>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item logout-btn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- breadcrumb -->
+      <div class="breadcrumb container">
+        <a href="#" class="breadcrumb-item">
+          <i class="ri-home-4-line"></i> Dashboard
+        </a>
+        <span class="breadcrumb-separator">
+          <i class="ri-arrow-right-s-line"></i>
+        </span>
+        <span class="breadcrumb-item active"> Transfer Funds </span>
+      </div>
+
+      <!-- transfer -->
+      <div class="transfer-container">
+        <div class="transfer-card">
+          <!-- Top Section -->
+          <div class="transfer-header">
+            <button class="back-btn"><i class="ri-arrow-left-line"></i></button>
+
+            <div class="icon-wrap">
+              <i class="ri-send-plane-fill"></i>
+            </div>
+
+            <h2>Send Money</h2>
+            <p>Swift and Secure Money Transfer</p>
+          </div>
+
+          <!-- Options -->
+          <div class="transfer-options">
+            <div class="transfer-item">
+              <div class="icon"><i class="ri-user-3-line"></i></div>
+              <a href="">
+                <div class="details">
+                  <h4>Internal Transfer</h4>
+                  <p>Send funds between your own accounts</p>
+                </div>
+                <i class="ri-arrow-right-s-line arrow"></i>
+              </a>
+            </div>
+
+            <div class="transfer-item">
+              <div class="icon"><i class="ri-bank-line"></i></div>
+              <a href="">
+                <div class="details">
+                  <h4>Local Transfer</h4>
+                  <p>Easily send money locally<br />0% Handling charges</p>
+                </div>
+                <i class="ri-arrow-right-s-line arrow"></i>
+              </a>
+            </div>
+
+            <div class="transfer-item">
+              <div class="icon"><i class="ri-exchange-dollar-line"></i></div>
+              <a href="">
+                <div class="details">
+                  <h4>International Wire Transfer</h4>
+                  <p>
+                    Wire transfer is executed under 72 hours<br />IBAN & SWIFT
+                    code required
+                  </p>
+                </div>
+                <i class="ri-arrow-right-s-line arrow"></i>
+              </a>
+            </div>
+
+            <div class="transfer-item">
+              <div class="icon"><i class="ri-bit-coin-line"></i></div>
+              <a href="">
+                <div class="details">
+                  <h4>Cryptocurrency Transfer</h4>
+                  <p>Easily send bitcoin and receive within 2–3 hours</p>
+                </div>
+                <i class="ri-arrow-right-s-line arrow"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

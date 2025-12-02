@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking Dashboard</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+    <div class="container">
+      <div class="company-logo">
+        <div class="logo-icon">C</div>
+        <div>
+          <div class="logo-text">CAPITAL</div>
+          <div class="logo-subtext">DIGITAL</div>
+        </div>
+      </div>
+
+      <div class="icon-right" id="menuToggle">
+        <i class="ri-menu-line" id="openMenu"></i>
+        <i class="ri-close-line" id="closeMenu"></i>
+      </div>
+    </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sideBar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="user-profile">
+          <div class="avatar">AF</div>
+          <div class="user-info">
+            <h3>Alder Franklin</h3>
+            <p>***** 09654</p>
+            <span class="status">
+              <span class="status-dot"></span>
+              <span class="status-text">Active</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-item">
+          <i class="ri-home-4-line"></i>
+          Overview
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-wallet-3-line"></i>
+          My Account
+        </a>
+
+        <a href="#" class="nav-item active">
+          <i class="ri-file-list-3-line"></i>
+          Summary
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-exchange-funds-line"></i>
+          Transfer Fund
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-fill"></i>
+          Deposit
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bill-line"></i>
+          Bill Pay
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-exchange-dollar-line"></i>
+          Loan
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-line"></i>
+          My Cards
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-user-3-line"></i>
+          Beneficiaries
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-question-answer-line"></i>
+          Help & Support
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-settings-3-line"></i>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item logout-btn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- breadcrumb -->
+      <div class="breadcrumb container">
+        <a href="#" class="breadcrumb-item">
+          <i class="ri-home-4-line"></i> Dashboard
+        </a>
+        <span class="breadcrumb-separator">
+          <i class="ri-arrow-right-s-line"></i>
+        </span>
+        <span class="breadcrumb-item active"> All Transactions </span>
+      </div>
+
+      <!-- Account Summary-->
+      <div class="container-three container">
+        <div class="account-summary left-section">
+          <div class="section-title-wrapper">
+            <h2>Account Summary</h2>
+            <div class="title-underline"></div>
+          </div>
+
+          <!-- Header Actions -->
+          <div class="summary-header">
+            <div class="search-box">
+              <i class="ri-search-line"></i>
+              <input
+                type="text"
+                placeholder="Search Recent Transactions, Names, Account Number..." />
+            </div>
+            <div class="header-actions">
+              <button class="btn-icon" title="Refresh">
+                <i class="ri-refresh-line" style="font-size: 18px"></i>
+              </button>
+              <button class="btn-icon" title="Print">
+                <i class="ri-printer-line" style="font-size: 18px"></i>
+              </button>
+              <button class="btn btn-primary" id="generateStatementBtn">
+                <i class="ri-file-text-line"></i>
+                Generate Statement
+              </button>
+            </div>
+          </div>
+
+          <!-- Transaction Table -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>DATE</th>
+                  <th>STATUS</th>
+                  <th>TO</th>
+                  <th>NARRATION</th>
+                  <th>AMOUNT</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="date-cell">
+                    09/02/25
+                    <span class="time">12:33 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-complete">
+                      <i class="ri-checkbox-circle-fill"></i>
+                      Complete
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO Hilton Closing</small>
+                  </td>
+                  <td class="amount-positive">+$87,430.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="date-cell">
+                    09/02/25
+                    <span class="time">12:08 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-processing">
+                      <i class="ri-time-line"></i>
+                      Processing
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO Hilton Closing</small>
+                  </td>
+                  <td class="amount-negative">-£102,000.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="date-cell">
+                    08/02/25
+                    <span class="time">12:08 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-complete">
+                      <i class="ri-checkbox-circle-fill"></i>
+                      Complete
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO Hilton Closing</small>
+                  </td>
+                  <td class="amount-positive">+£55,000.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="date-cell">
+                    08/02/25
+                    <span class="time">12:05 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-complete">
+                      <i class="ri-checkbox-circle-fill"></i>
+                      Complete
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO ****** Closing</small>
+                  </td>
+                  <td class="amount-positive">+£115,800.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="date-cell">
+                    06/02/25
+                    <span class="time">08:35 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-complete">
+                      <i class="ri-checkbox-circle-fill"></i>
+                      Complete
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO Hilton Closing</small>
+                  </td>
+                  <td class="amount-negative">-£92,000.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="view-more">
+              <a href="#">
+                View more
+                <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="stock-card right-section">
+          <div class="stock-header">
+            <div class="tesla-logo">T</div>
+            <div class="stock-title">
+              Tesla, Inc
+              <div class="status-dot"></div>
+            </div>
+          </div>
+
+          <div class="price">$333.87</div>
+          <div class="trend">↑ 4.30% this week</div>
+
+          <div class="chart-area">
+            <canvas id="tslaChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <!-- Generate Statement Modal -->
+      <div class="modal-overlay" id="statementModal">
+        <div class="modal">
+          <div class="modal-header">
+            <h3>Generate Statement</h3>
+            <button class="modal-close" id="closeModal">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Source Account -->
+            <div class="form-group">
+              <label class="form-label">
+                Source Account <span class="required">*</span>
+              </label>
+              <div class="radio-field">
+                <input
+                  type="radio"
+                  id="sourceAccount"
+                  name="account"
+                  checked
+                  disabled />
+                <label for="sourceAccount">Maria Myers (****58320)</label>
+                <i class="ri-bank-card-line" style="font-size: 20px"></i>
+              </div>
+            </div>
+
+            <!-- Start Year -->
+            <div class="form-group">
+              <label class="form-label">
+                Start Year <span class="required">*</span>
+              </label>
+              <select id="startYear">
+                <option value="">Select Year</option>
+                <option value="2020" selected>2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+
+            <!-- End Year -->
+            <div class="form-group">
+              <label class="form-label">
+                End Year <span class="required">*</span>
+              </label>
+              <select id="endYear">
+                <option value="">Select Year</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025" selected>2025</option>
+              </select>
+            </div>
+
+            <!-- Address Toggle -->
+            <div class="form-group">
+              <div class="toggle-field">
+                <span class="toggle-label">Address On Statement</span>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="addressToggle" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Info Message -->
+            <div class="info-box">
+              <i class="ri-information-line"></i>
+              <p>
+                The following address will be shown and appear on the statement
+                of account for reference and correspondence purposes.
+              </p>
+            </div>
+
+            <!-- Address Display -->
+            <div class="form-group">
+              <div class="address-box active" id="addressBox">
+                <i class="ri-map-pin-line"></i>
+                <div class="address-text">
+                  Former Notre Dame Convent,<br />
+                  Ashton Square,<br />
+                  England, United Kingdom
+                </div>
+              </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button class="btn-generate" id="generateBtn">
+              Generate
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // small chart like in screenshot
+      new Chart(document.getElementById("tslaChart"), {
+        type: "line",
+        data: {
+          labels: [
+            "2024/05/20",
+            "2024/05/21",
+            "2024/05/22",
+            "2024/05/23",
+            "2024/05/24",
+          ],
+          datasets: [
+            {
+              data: [320, 340, 350, 348, 333],
+              borderColor: "#3ab0ff",
+              backgroundColor: "rgba(58, 176, 255, 0.2)",
+              fill: true,
+              tension: 0.4,
+              borderWidth: 2,
+              pointRadius: 0,
+            },
+          ],
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { display: false },
+            y: { display: false },
+          },
+        },
+      });
+    </script>
+
+    <script src="../static/js/custom.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

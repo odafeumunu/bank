@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account - Profile</title>
+
+    <!-- Remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/account.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="company-logo">
+          <div class="logo-icon">C</div>
+          <div>
+            <div class="logo-text">CAPITAL</div>
+            <div class="logo-subtext">DIGITAL</div>
+          </div>
+        </div>
+
+        <div class="icon-right" id="menuToggle">
+          <i class="ri-menu-line" id="openMenu"></i>
+          <i class="ri-close-line" id="closeMenu"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sideBar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="user-profile">
+          <div class="avatar">AF</div>
+          <div class="user-info">
+            <h3>Alder Franklin</h3>
+            <p>***** 09654</p>
+            <span class="status">
+              <span class="status-dot"></span>
+              <span class="status-text">Active</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-item">
+          <i class="ri-home-4-line"></i>
+          Overview
+        </a>
+
+        <a href="#" class="nav-item active">
+          <i class="ri-wallet-3-line"></i>
+          My Account
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-file-list-3-line"></i>
+          Summary
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-exchange-funds-line"></i>
+          Transfer Fund
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-fill"></i>
+          Deposit
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bill-line"></i>
+          Bill Pay
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-exchange-dollar-line"></i>
+          Loan
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-line"></i>
+          My Cards
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-user-3-line"></i>
+          Beneficiaries
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-question-answer-line"></i>
+          Help & Support
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-settings-3-line"></i>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item logout-btn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- breadcrumb -->
+      <div class="breadcrumb container">
+        <a href="#" class="breadcrumb-item">
+          <i class="ri-home-4-line"></i> Dashboard
+        </a>
+        <span class="breadcrumb-separator">
+          <i class="ri-arrow-right-s-line"></i>
+        </span>
+        <span class="breadcrumb-item active"> My Account </span>
+      </div>
+
+      <!-- Hero Banner -->
+      <div class="hero-banner container">
+        <div class="chart-pattern">
+          <div class="bar" style="height: 40%; animation-delay: 0s"></div>
+          <div class="bar" style="height: 60%; animation-delay: 0.1s"></div>
+          <div class="bar" style="height: 80%; animation-delay: 0.2s"></div>
+          <div class="bar" style="height: 50%; animation-delay: 0.3s"></div>
+          <div class="bar" style="height: 90%; animation-delay: 0.4s"></div>
+          <div class="bar" style="height: 70%; animation-delay: 0.5s"></div>
+          <div class="bar" style="height: 55%; animation-delay: 0.6s"></div>
+          <div class="bar" style="height: 65%; animation-delay: 0.7s"></div>
+          <div class="bar" style="height: 75%; animation-delay: 0.8s"></div>
+          <div class="bar" style="height: 45%; animation-delay: 0.9s"></div>
+          <div class="bar" style="height: 85%; animation-delay: 1s"></div>
+          <div class="bar" style="height: 60%; animation-delay: 1.1s"></div>
+        </div>
+        <div class="line-chart">
+          <svg viewBox="0 0 100 50" preserveAspectRatio="none">
+            <polyline
+              points="0,45 10,40 20,35 30,25 40,30 50,20 60,25 70,15 80,20 90,10 100,15"
+              fill="none"
+              stroke="rgba(34, 211, 238, 0.6)"
+              stroke-width="2" />
+            <polyline
+              points="0,40 10,35 20,30 30,20 40,25 50,15 60,20 70,10 80,15 90,5 100,10"
+              fill="none"
+              stroke="rgba(167, 243, 208, 0.6)"
+              stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="container">
+        <div class="profile-grid">
+          <!-- Sidebar -->
+          <div class="profile-sidebar">
+            <!-- Profile Photo -->
+            <div class="profile-photo-section">
+              <div
+                class="photo-wrapper"
+                onclick="document.getElementById('photoInput').click()">
+                <img
+                  src="https://ui-avatars.com/api/?name=Alder+Franklin&size=120&background=2563eb&color=fff"
+                  alt="Profile"
+                  class="profile-photo"
+                  id="profileImage" />
+                <div class="photo-edit-overlay">
+                  <i class="ri-camera-line"></i>
+                </div>
+              </div>
+              <input type="file" id="photoInput" accept="image/*" />
+              <button
+                class="edit-photo-btn"
+                onclick="document.getElementById('photoInput').click()">
+                <i class="ri-image-edit-line"></i>
+                Edit Photo
+              </button>
+            </div>
+
+            <div class="profile-name">Alder Franklin</div>
+            <div class="profile-id">***** 09654</div>
+            <div class="status-badge">
+              <i class="ri-checkbox-circle-fill"></i>
+              Active
+            </div>
+
+            <!-- Complete Profile Progress -->
+            <div class="progress-section" style="margin-top: 2rem">
+              <div class="progress-header">
+                <span class="progress-label">Complete Profile</span>
+                <span class="progress-value">80%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div
+                  class="progress-bar"
+                  id="profileProgress"
+                  style="--progress-width: 80%"></div>
+              </div>
+            </div>
+
+            <!-- KYC Progress -->
+            <div class="progress-section">
+              <div class="progress-header">
+                <span class="progress-label"
+                  >KYC Verification & Account Limit</span
+                >
+                <span class="progress-value">10%</span>
+              </div>
+              <div class="progress-bar-container">
+                <div
+                  class="progress-bar red"
+                  id="kycProgress"
+                  style="--progress-width: 10%"></div>
+              </div>
+            </div>
+
+            <!-- Info List -->
+            <ul class="info-list">
+              <li class="info-item">
+                <i class="ri-shield-cross-line"></i>
+                <span>Not Verified</span>
+              </li>
+              <li class="info-item">
+                <i class="ri-money-pound-circle-line"></i>
+                <span>£241,570.00</span>
+              </li>
+              <li class="info-item">
+                <i class="ri-map-pin-line"></i>
+                <span>United Kingdom</span>
+              </li>
+              <li class="info-item">
+                <i class="ri-hashtag"></i>
+                <span>20312099654</span>
+              </li>
+              <li class="info-item">
+                <i class="ri-briefcase-line"></i>
+                <span>Petroleum Engineer</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Main Content -->
+          <div class="profile-content">
+            <!-- Tabs -->
+            <div class="tabs">
+              <button class="tab active" data-tab="personal">
+                <i class="ri-user-line"></i>
+                Personal Details
+              </button>
+              <button class="tab" data-tab="bank">
+                <i class="ri-bank-line"></i>
+                Bank Details
+              </button>
+              <button class="tab" data-tab="card">
+                <i class="ri-bank-card-line"></i>
+                Card Details
+              </button>
+              <button class="tab" data-tab="kyc">
+                <i class="ri-shield-check-line"></i>
+                KYC Verify
+              </button>
+              <button class="tab" data-tab="limits">
+                <i class="ri-bar-chart-box-line"></i>
+                Account Limits
+              </button>
+            </div>
+
+            <!-- Personal Details Tab -->
+            <div class="tab-content active" id="personal">
+              <div class="content-header">
+                <div></div>
+                <button class="edit-btn">
+                  <i class="ri-edit-line"></i>
+                  Edit
+                </button>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-field">
+                  <span class="field-label">First Name</span>
+                  <span class="field-value">Alder</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Last Name</span>
+                  <span class="field-value">Franklin</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Gender</span>
+                  <span class="field-value">Male</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Date Of Birth</span>
+                  <span class="field-value">13/05/25</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Email Address</span>
+                  <span class="field-value highlight"
+                    >alderfranklin6@gmail.com</span
+                  >
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Phone Number</span>
+                  <span class="field-value">+44(0) 785 5244 315</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Occupation</span>
+                  <span class="field-value">Engineer</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Annual Income</span>
+                  <span class="field-value">$280,000.00 GBP</span>
+                </div>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-field">
+                  <span class="field-label">Country</span>
+                  <span class="field-value">United Kingdom</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">State</span>
+                  <span class="field-value">England</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">City</span>
+                  <span class="field-value">Liverpool</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Zip Code</span>
+                  <span class="field-value">L25 7TR</span>
+                </div>
+                <div class="form-field full-width">
+                  <span class="field-label">Address</span>
+                  <span class="field-value"
+                    >Former Notre Dame Convent, Ashton Square.</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Bank Details Tab -->
+            <div class="tab-content" id="bank">
+              <div class="content-header">
+                <div></div>
+                <button class="edit-btn">
+                  <i class="ri-edit-line"></i>
+                  Edit
+                </button>
+              </div>
+
+              <div class="form-grid">
+                <div class="form-field">
+                  <span class="field-label">Account Number/IBAN</span>
+                  <span class="field-value">2091758320</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Account Type</span>
+                  <span class="field-value"
+                    >Platinum Checking Package ($311,430)</span
+                  >
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Routing Number</span>
+                  <span class="field-value">83837373366</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label"
+                    >Bank Identifier Code (BIC/SWIFT Code)</span
+                  >
+                  <span class="field-value">6367-3383 332233</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Social Security Number</span>
+                  <span class="field-value">636 3373 373737366</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label"
+                    >ITIN or National Insurance Number</span
+                  >
+                  <span class="field-value">737636363</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Credit Report/Score</span>
+                  <span class="field-value">558</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Bank Account Status</span>
+                  <span class="field-value status-dormant">
+                    <i class="ri-close-circle-fill"></i>
+                    Dormant
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Details Tab -->
+            <div class="tab-content" id="card">
+              <div class="content-header">
+                <div></div>
+                <button class="edit-btn">
+                  <i class="ri-edit-line"></i> Edit
+                </button>
+              </div>
+              <div class="form-grid">
+                <div class="form-field">
+                  <span class="field-label">Cardholder Name</span>
+                  <span class="field-value">Maria Myers</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Card Status</span>
+                  <span class="field-value status-active">
+                    <i class="ri-checkbox-circle-fill"></i>
+                    Active
+                  </span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Card Number</span>
+                  <div class="card-number">
+                    <span class="field-value">**** **** **** 3547</span>
+                    <i class="ri-eye-line" style="cursor: pointer"></i>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">CVV/CVC</span>
+                  <span class="field-value">305</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Expiration Date</span>
+                  <span class="field-value">08/25</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Card Issue Date</span>
+                  <span class="field-value">06 March 2023, 10:35 AM</span>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Card Scheme</span>
+                  <div class="card-scheme">
+                    <span>VISA</span>
+                    Visa
+                  </div>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Card Unique ID</span>
+                  <div style="display: flex; align-items: center; gap: 0.5rem">
+                    <span
+                      class="field-value"
+                      style="
+                        font-family: 'Courier New', monospace;
+                        font-size: 13px;
+                      "
+                      >bnk_HpGH63R9W8FR73UE</span
+                    >
+                    <i
+                      class="ri-file-copy-line"
+                      style="cursor: pointer"
+                      title="Copy"></i>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Card PIN</span>
+                  <div style="display: flex; align-items: center; gap: 0.5rem">
+                    <span class="field-value">*****</span>
+                    <i class="ri-eye-line" style="cursor: pointer"></i>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <span class="field-label">Card Balance</span>
+                  <span class="field-value">$8,650.00 USD</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- KYC Verify Tab -->
+            <div class="tab-content" id="kyc">
+              <div class="kyc-grid">
+                <!-- Identity Verification -->
+                <div class="kyc-card">
+                  <div class="kyc-header">
+                    <div class="kyc-icon">
+                      <i class="ri-shield-user-line"></i>
+                    </div>
+                    <span class="kyc-status not-verified">Not Verified</span>
+                  </div>
+                  <div class="kyc-title">Identity Verification</div>
+                  <div class="kyc-description">
+                    Upload a government-issued ID (passport, driver's license,
+                    or national ID card)
+                  </div>
+                  <button class="kyc-action">
+                    <i class="ri-upload-2-line"></i>
+                    Upload Document
+                  </button>
+                </div>
+
+                <!-- Address Verification -->
+                <div class="kyc-card">
+                  <div class="kyc-header">
+                    <div class="kyc-icon">
+                      <i class="ri-home-4-line"></i>
+                    </div>
+                    <span class="kyc-status not-verified">Not Verified</span>
+                  </div>
+                  <div class="kyc-title">Address Verification</div>
+                  <div class="kyc-description">
+                    Upload a recent utility bill, bank statement, or government
+                    letter
+                  </div>
+                  <button class="kyc-action">
+                    <i class="ri-upload-2-line"></i>
+                    Upload Proof
+                  </button>
+                </div>
+
+                <!-- Selfie Verification -->
+                <div class="kyc-card">
+                  <div class="kyc-header">
+                    <div class="kyc-icon">
+                      <i class="ri-camera-line"></i>
+                    </div>
+                    <span class="kyc-status pending">Pending</span>
+                  </div>
+                  <div class="kyc-title">Selfie Verification</div>
+                  <div class="kyc-description">
+                    Take a clear selfie holding your ID document for
+                    verification
+                  </div>
+                  <button
+                    class="kyc-action"
+                    disabled
+                    style="opacity: 0.5; cursor: not-allowed">
+                    <i class="ri-time-line"></i>
+                    Under Review
+                  </button>
+                </div>
+
+                <!-- Phone Verification -->
+                <div class="kyc-card">
+                  <div class="kyc-header">
+                    <div class="kyc-icon">
+                      <i class="ri-smartphone-line"></i>
+                    </div>
+                    <span class="kyc-status verified">Verified</span>
+                  </div>
+                  <div class="kyc-title">Phone Verification</div>
+                  <div class="kyc-description">
+                    Your phone number has been verified successfully
+                  </div>
+                  <button
+                    class="kyc-action"
+                    style="
+                      background: var(--success);
+                      color: white;
+                      border-color: var(--success);
+                    ">
+                    <i class="ri-checkbox-circle-line"></i>
+                    Verified
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Account Limits Tab -->
+            <div class="tab-content" id="limits">
+              <div class="limits-grid">
+                <!-- Daily Transaction Limit -->
+                <div class="limit-card">
+                  <div class="limit-header">
+                    <span class="limit-title">Daily Transaction Limit</span>
+                    <span class="limit-badge">Tier 1</span>
+                  </div>
+                  <div class="limit-details">
+                    <div class="limit-item">
+                      <div class="limit-label">Used Today</div>
+                      <div class="limit-value">$2,450</div>
+                    </div>
+                    <div class="limit-item">
+                      <div class="limit-label">Remaining</div>
+                      <div class="limit-value">$7,550</div>
+                    </div>
+                    <div class="limit-item">
+                      <div class="limit-label">Daily Limit</div>
+                      <div class="limit-value">$10,000</div>
+                    </div>
+                  </div>
+                  <div class="limit-bar">
+                    <div class="limit-bar-fill" style="width: 24.5%"></div>
+                  </div>
+                </div>
+
+                <!-- Monthly Transaction Limit -->
+                <div class="limit-card">
+                  <div class="limit-header">
+                    <span class="limit-title">Monthly Transaction Limit</span>
+                    <span class="limit-badge">Tier 1</span>
+                  </div>
+                  <div class="limit-details">
+                    <div class="limit-item">
+                      <div class="limit-label">Used This Month</div>
+                      <div class="limit-value">$45,780</div>
+                    </div>
+                    <div class="limit-item">
+                      <div class="limit-label">Remaining</div>
+                      <div class="limit-value">$154,220</div>
+                    </div>
+                    <div class="limit-item">
+                      <div class="limit-label">Monthly Limit</div>
+                      <div class="limit-value">$200,000</div>
+                    </div>
+                  </div>
+                  <div class="limit-bar">
+                    <div class="limit-bar-fill" style="width: 22.89%"></div>
+                  </div>
+                </div>
+
+                <!-- Withdrawal Limit -->
+                <div class="limit-card">
+                  <div class="limit-header">
+                    <span class="limit-title"
+                      >ATM Withdrawal Limit (Daily)</span
+                    >
+                    <span class="limit-badge">Tier 1</span>
+                  </div>
+                  <div class="limit-details">
+                    <div class="limit-item">
+                      <div class="limit-label">Used Today</div>
+                      <div class="limit-value">$800</div>
+                    </div>
+                    <div class="limit-item">
+                      <div class="limit-label">Remaining</div>
+                      <div class="limit-value">$1,200</div>
+                    </div>
+                    <div class="limit-item">
+                      <div class="limit-label">Daily Limit</div>
+                      <div class="limit-value">$2,000</div>
+                    </div>
+                  </div>
+                  <div class="limit-bar">
+                    <div class="limit-bar-fill" style="width: 40%"></div>
+                  </div>
+                </div>
+
+                <!-- Transfer Limit -->
+                <div class="limit-card">
+                  <div class="limit-header">
+                    <span class="limit-title"
+                      >Wire Transfer Limit (Per Transaction)</span
+                    >
+                    <span class="limit-badge">Tier 1</span>
+                  </div>
+                  <div class="limit-details">
+                    <div class="limit-item">
+                      <div class="limit-label">Last Transfer</div>
+                      <div class="limit-value">$15,000</div>
+                    </div>
+                    <div class="limit-item">
+                      <div class="limit-label">Available</div>
+                      <div class="limit-value">$35,000</div>
+                    </div>
+                    <div class="limit-item">
+                      <div class="limit-label">Max Per Transfer</div>
+                      <div class="limit-value">$50,000</div>
+                    </div>
+                  </div>
+                  <div class="limit-bar">
+                    <div class="limit-bar-fill" style="width: 30%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Upgrade Notice -->
+              <div
+                style="
+                  margin-top: 2rem;
+                  padding: 1.5rem;
+                  background: var(--blue-light);
+                  border-radius: 12px;
+                  border-left: 4px solid var(--blue-primary);
+                ">
+                <div style="display: flex; align-items: start; gap: 1rem">
+                  <i
+                    class="ri-information-line"
+                    style="font-size: 24px; color: var(--blue-primary)"></i>
+                  <div>
+                    <div
+                      style="
+                        font-weight: 600;
+                        margin-bottom: 0.5rem;
+                        color: var(--blue-dark);
+                      ">
+                      Upgrade Your Account Tier
+                    </div>
+                    <div
+                      style="
+                        font-size: 14px;
+                        color: var(--muted-foreground);
+                        margin-bottom: 1rem;
+                      ">
+                      Complete your KYC verification to unlock higher
+                      transaction limits and access premium features.
+                    </div>
+                    <button
+                      style="
+                        padding: 0.5rem 1.5rem;
+                        background: var(--blue-primary);
+                        color: white;
+                        border: none;
+                        border-radius: 6px;
+                        font-weight: 500;
+                        cursor: pointer;
+                      ">
+                      Upgrade Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Animate progress bars on page load
+      window.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+          document.querySelectorAll(".progress-bar").forEach((bar) => {
+            bar.classList.add("animate");
+          });
+        }, 300);
+      });
+
+      // Tab Switching
+      const tabs = document.querySelectorAll(".tab");
+      const tabContents = document.querySelectorAll(".tab-content");
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const targetTab = tab.dataset.tab;
+          // Remove active class from all tabs and contents
+          tabs.forEach((t) => t.classList.remove("active"));
+          tabContents.forEach((c) => c.classList.remove("active"));
+          // Add active class to clicked tab and corresponding content
+          tab.classList.add("active");
+          document.getElementById(targetTab).classList.add("active");
+        });
+      });
+      // Photo Upload
+      const photoInput = document.getElementById("photoInput");
+      const profileImage = document.getElementById("profileImage");
+      photoInput.addEventListener("change", (e) => {
+        const file = e.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = (e) => {
+            profileImage.src = e.target.result;
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    </script>
+
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

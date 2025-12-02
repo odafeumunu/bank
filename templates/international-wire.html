@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>International Wire Transfer</title>
+
+    <!-- Remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/transfer.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="company-logo">
+          <div class="logo-icon">C</div>
+          <div>
+            <div class="logo-text">CAPITAL</div>
+            <div class="logo-subtext">DIGITAL</div>
+          </div>
+        </div>
+
+        <div class="icon-right" id="menuToggle">
+          <i class="ri-menu-line" id="openMenu"></i>
+          <i class="ri-close-line" id="closeMenu"></i>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sideBar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="user-profile">
+          <div class="avatar">AF</div>
+          <div class="user-info">
+            <h3>Alder Franklin</h3>
+            <p>***** 09654</p>
+            <span class="status">
+              <span class="status-dot"></span>
+              <span class="status-text">Active</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-item">
+          <i class="ri-home-4-line"></i>
+          Overview
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-wallet-3-line"></i>
+          My Account
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-file-list-3-line"></i>
+          Summary
+        </a>
+
+        <a href="#" class="nav-item active">
+          <i class="ri-exchange-funds-line"></i>
+          Transfer Fund
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-fill"></i>
+          Deposit
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bill-line"></i>
+          Bill Pay
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-exchange-dollar-line"></i>
+          Loan
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-line"></i>
+          My Cards
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-user-3-line"></i>
+          Beneficiaries
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-question-answer-line"></i>
+          Help & Support
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-settings-3-line"></i>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item logout-btn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- breadcrumb -->
+      <div class="breadcrumb container">
+        <a href="#" class="breadcrumb-item">
+          <i class="ri-home-4-line"></i> Dashboard
+        </a>
+        <span class="breadcrumb-separator">
+          <i class="ri-arrow-right-s-line"></i>
+        </span>
+        <a href="#" class="breadcrumb-item">Transfer Funds</a>
+        <span class="breadcrumb-separator">
+          <i class="ri-arrow-right-s-line"></i>
+        </span>
+        <span class="breadcrumb-item active">International Wire</span>
+      </div>
+
+      <!-- transfer -->
+      <div class="transfer-container">
+        <div class="transfer-card">
+          <!-- Top Section -->
+          <div class="transfer-header">
+            <button class="back-btn"><i class="ri-arrow-left-line"></i></button>
+
+            <div class="icon-wrap">
+              <i class="ri-exchange-dollar-line"></i>
+            </div>
+
+            <h2>International Wire</h2>
+            <p>International Wire Transfer takes up to 24-72Hours to confirm.</p>
+          </div>
+
+          <!-- Form Content -->
+          <div class="transfer-options">
+            <!-- Fiat Balance Section -->
+            <div class="form-section">
+              <label class="form-label">Fiat Balance</label>
+              <div class="balance-display">
+                <div class="balance-icon">
+                  <i class="ri-wallet-3-line"></i>
+                </div>
+                <div class="balance-information">
+                  <div class="balance-title">Fiat Balance</div>
+                  <div class="balance-amount">£241,570.00</div>
+                  <div class="balance-account">Alder Franklin (******09654)</div>
+                </div>
+                <div class="balance-check">
+                  <i class="ri-checkbox-circle-fill"></i>
+                </div>
+              </div>
+            </div>
+
+            <!-- Amount to Transfer -->
+            <div class="form-section">
+              <label class="form-label">Amount to Transfer</label>
+              <div class="amount-input-wrapper">
+                <span class="currency-symbol">£</span>
+                <input type="text" class="amount-input" placeholder="0.00" />
+              </div>
+              <div class="quick-amounts">
+                <button class="quick-amount-btn">£500</button>
+                <button class="quick-amount-btn">£500</button>
+                <button class="quick-amount-btn">£1,000</button>
+                <button class="quick-amount-btn">MAX</button>
+              </div>
+            </div>
+
+            <!-- Beneficiary Account Name -->
+            <div class="form-section">
+              <label class="form-label">Beneficiary Account Name *</label>
+              <div class="input-with-icon">
+                <i class="ri-user-3-line"></i>
+                <input type="text" class="form-input" placeholder="Enter beneficiary's full name" />
+              </div>
+            </div>
+
+            <!-- Beneficiary Account Number -->
+            <div class="form-section">
+              <label class="form-label">Beneficiary Account Number *</label>
+              <div class="input-with-icon">
+                <i class="ri-hashtag"></i>
+                <input type="text" class="form-input" placeholder="Enter account number" />
+                <button class="input-action-btn">
+                  <i class="ri-file-copy-line"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Bank Name -->
+            <div class="form-section">
+              <label class="form-label">Bank Name *</label>
+              <div class="input-with-icon">
+                <i class="ri-bank-line"></i>
+                <input type="text" class="form-input" placeholder="Enter bank name" />
+              </div>
+            </div>
+
+            <!-- Bank Address -->
+            <div class="form-section">
+              <label class="form-label">Bank Address *</label>
+              <div class="input-with-icon">
+                <i class="ri-map-pin-line"></i>
+                <input type="text" class="form-input" placeholder="Enter bank address" />
+              </div>
+            </div>
+
+            <!-- Account Type -->
+            <div class="form-section">
+              <label class="form-label">Account Type *</label>
+              <div class="select-wrapper">
+                <i class="ri-bank-card-line"></i>
+                <select class="form-select">
+                  <option>Online Banking</option>
+                  <option>Savings Account</option>
+                  <option>Current Account</option>
+                </select>
+                <i class="ri-arrow-down-s-line select-arrow"></i>
+              </div>
+            </div>
+
+            <!-- Country -->
+            <div class="form-section">
+              <label class="form-label">Country *</label>
+              <div class="select-wrapper">
+                <i class="ri-global-line"></i>
+                <select class="form-select">
+                  <option>Afghanistan</option>
+                  <option>United States</option>
+                  <option>United Kingdom</option>
+                  <option>Canada</option>
+                </select>
+                <i class="ri-arrow-down-s-line select-arrow"></i>
+              </div>
+            </div>
+
+            <!-- Swift Code -->
+            <div class="form-section">
+              <label class="form-label">Swift Code *</label>
+              <div class="input-with-icon">
+                <i class="ri-key-2-line"></i>
+                <input type="text" class="form-input" placeholder="Enter swift code" />
+              </div>
+            </div>
+
+            <!-- IBAN Number -->
+            <div class="form-section">
+              <label class="form-label">IBAN Number *</label>
+              <div class="input-with-icon">
+                <i class="ri-barcode-line"></i>
+                <input type="text" class="form-input" placeholder="Enter IBAN number" />
+                <button class="input-action-btn">
+                  <i class="ri-file-copy-line"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Warning Message -->
+            <div class="warning-box">
+              <i class="ri-error-warning-line"></i>
+              <span>International Bank Account Number Format varies by country</span>
+            </div>
+
+            <!-- Transaction PIN -->
+            <div class="form-section">
+              <label class="form-label">Transaction PIN *</label>
+              <div class="input-with-icon">
+                <i class="ri-lock-password-line"></i>
+                <input type="password" class="form-input" placeholder="Enter your 4-10 digit PIN" />
+                <button class="input-action-btn">
+                  <i class="ri-eye-line"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Submit Buttons -->
+            <button class="submit-btn primary">
+              <i class="ri-send-plane-fill"></i>
+              Continue to Transfer
+            </button>
+            <button class="submit-btn secondary">
+              <i class="ri-arrow-left-line"></i>
+              Back to Dashboard
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bank Registration</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet" />
+
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link rel="stylesheet" href="../static/css/log-reg.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="company-logo">
+          <div class="logo-icon">C</div>
+          <div>
+            <div class="logo-text">CAPITAL</div>
+            <div class="logo-subtext">DIGITAL</div>
+          </div>
+        </div>
+
+        <div class="icon-right" id="menuToggle">
+          <i class="ri-menu-line" id="openMenu"></i>
+          <i class="ri-close-line" id="closeMenu"></i>
+        </div>
+      </div>
+    </header>
+
+    <div class="form-wrapper">
+      <div class="container">
+        <h2>Register</h2>
+        <div class="progress">
+          <div class="active"></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <form id="regForm">
+          <!-- STEP 1 -->
+          <div class="form-step active">
+            <h3 class="section-title">Personal Details</h3>
+
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input
+                type="text"
+                id="fullName"
+                name="fullName"
+                placeholder="Enter your full name"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input type="date" id="dob" name="dob" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="example@email.com"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter phone number"
+                required />
+            </div>
+
+            <button type="button" class="btn next">Next</button>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="form-step">
+            <h3 class="section-title">Account Security</h3>
+
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Choose a username"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="regPass">Password</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="regPass"
+                  name="password"
+                  placeholder="Enter password"
+                  required />
+                <i
+                  class="ri-eye-line"
+                  onclick="togglePassword('regPass', this)"></i>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="regPass2">Confirm Password</label>
+              <div class="password-wrapper">
+                <input
+                  type="password"
+                  id="regPass2"
+                  name="confirmPassword"
+                  placeholder="Confirm password"
+                  required />
+                <i
+                  class="ri-eye-line"
+                  onclick="togglePassword('regPass2', this)"></i>
+              </div>
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn prev">Back</button>
+              <button type="button" class="btn next">Next</button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="form-step">
+            <h3 class="section-title">Identification</h3>
+
+            <div class="form-group">
+              <label for="bvn">National ID / BVN</label>
+              <input
+                type="text"
+                id="bvn"
+                name="bvn"
+                placeholder="Enter National ID or BVN"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="address">Residential Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Enter your home address"
+                required />
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn prev">Back</button>
+              <button type="button" class="btn next">Next</button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="form-step">
+            <h3 class="section-title">Security Questions</h3>
+
+            <div class="form-group">
+              <label for="securityQuestion">Security Question</label>
+              <input
+                type="text"
+                id="securityQuestion"
+                name="securityQuestion"
+                placeholder="Enter your security question"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="securityAnswer">Answer</label>
+              <input
+                type="text"
+                id="securityAnswer"
+                name="securityAnswer"
+                placeholder="Enter your answer"
+                required />
+            </div>
+
+            <div class="form-group">
+              <label for="twofaPhone">Phone for 2FA</label>
+              <input
+                type="tel"
+                id="twofaPhone"
+                name="twofaPhone"
+                placeholder="Enter 2FA phone number"
+                required />
+            </div>
+
+            <div class="form-nav">
+              <button type="button" class="btn prev">Back</button>
+              <button type="button" class="btn next">Next</button>
+            </div>
+          </div>
+
+          <!-- STEP 5 -->
+          <div class="form-step">
+            <h3 class="section-title">Review & Submit</h3>
+            <p>Please review all details before submitting.</p>
+
+            <div class="form-nav">
+              <button type="button" class="btn prev">Back</button>
+              <button type="submit" class="btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      const steps = document.querySelectorAll(".form-step");
+      const nextBtns = document.querySelectorAll(".next");
+      const prevBtns = document.querySelectorAll(".prev");
+      const progress = document.querySelectorAll(".progress div");
+      let currentStep = 0;
+
+      nextBtns.forEach((btn) =>
+        btn.addEventListener("click", () => {
+          steps[currentStep].classList.remove("active");
+          progress[currentStep].classList.remove("active");
+          currentStep++;
+          steps[currentStep].classList.add("active");
+          progress[currentStep].classList.add("active");
+        })
+      );
+
+      prevBtns.forEach((btn) =>
+        btn.addEventListener("click", () => {
+          steps[currentStep].classList.remove("active");
+          progress[currentStep].classList.remove("active");
+          currentStep--;
+          steps[currentStep].classList.add("active");
+          progress[currentStep].classList.add("active");
+        })
+      );
+
+      function togglePassword(id, icon) {
+        const input = document.getElementById(id);
+        if (input.type === "password") {
+          input.type = "text";
+          icon.classList.replace("ri-eye-line", "ri-eye-off-line");
+        } else {
+          input.type = "password";
+          icon.classList.replace("ri-eye-off-line", "ri-eye-line");
+        }
+      }
+    </script>
+  </body>
+</html>

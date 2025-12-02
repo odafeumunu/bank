@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banking Dashboard</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Remix icon -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+    <div class="container">
+      <div class="company-logo">
+        <div class="logo-icon">C</div>
+        <div>
+          <div class="logo-text">CAPITAL</div>
+          <div class="logo-subtext">DIGITAL</div>
+        </div>
+      </div>
+
+      <div class="icon-right" id="menuToggle">
+        <i class="ri-menu-line" id="openMenu"></i>
+        <i class="ri-close-line" id="closeMenu"></i>
+      </div>
+    </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sideBar" class="sidebar">
+      <div class="sidebar-header">
+        <div class="user-profile">
+          <div class="avatar">AF</div>
+          <div class="user-info">
+            <h3>Alder Franklin</h3>
+            <p>***** 09654</p>
+            <span class="status">
+              <span class="status-dot"></span>
+              <span class="status-text">Active</span>
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a href="#" class="nav-item active">
+          <i class="ri-home-4-line"></i>
+          Overview
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-wallet-3-line"></i>
+          My Account
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-file-list-3-line"></i>
+          Summary
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-exchange-funds-line"></i>
+          Transfer Fund
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-fill"></i>
+          Deposit
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bill-line"></i>
+          Bill Pay
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-exchange-dollar-line"></i>
+          Loan
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-bank-card-line"></i>
+          My Cards
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-user-3-line"></i>
+          Beneficiaries
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-question-answer-line"></i>
+          Help & Support
+        </a>
+
+        <a href="#" class="nav-item">
+          <i class="ri-settings-3-line"></i>
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="nav-item logout-btn">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+          </svg>
+          Logout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container-one container">       
+        <div class="section-header">
+          <div class="section-title-wrapper">
+            <h2>Financial Overview</h2>
+            <div class="title-underline"></div>
+          </div>
+         <div style="display: flex; gap: 10px;">
+  
+          <button class="apply-btn">
+            Add Deposit
+            <i class="ri-arrow-right-line"></i>
+          </button>
+
+          <div class="select-container">
+            <button class="select-trigger" id="selectBtn">
+              Select Transfer
+              <i class="ri-arrow-down-s-line"></i>
+            </button>
+
+            <div class="select-dropdown" id="selectDropdown">
+              <div class="select-option">Internal Wire <i class="ri-arrow-right-up-line"></i></div>
+              <div class="select-option">Droestic Wire <i class="ri-arrow-right-up-line"></i></div>
+              <div class="select-option">International Wire <i class="ri-arrow-right-up-line"></i></div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+        <!-- Account Cards Grid -->
+        <div class="dashboard-grid">
+          <!-- Balance Card -->
+          <div class="account-balance">
+            <div class="balance-card">
+              <div class="balance-header">
+                <div class="balance-info">
+                  <div class="balance-avatar">AF</div>
+                  <div>
+                    <p class="balance-amount">Available Balance</p>
+                    <h2 class="balance-total">£241,570.00</h2>
+                    <p class="balance-name">Alder Franklin</p>
+                  </div>
+                </div>
+                <!-- <i class="ri-eye-line"></i> -->
+                <i class="ri-eye-off-line"></i>
+              </div>
+
+              <div class="crypto-info">
+                <div class="crypto-dot"></div>
+                <span class="crypto-amount">0.5948 BTC</span>
+                <span class="crypto-value">$132,891.00</span>
+              </div>
+
+              <div class="action-buttons">
+                <button class="action-btn">
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 10l7-7m0 0l7 7m-7-7v18" />
+                  </svg>
+                  Receive
+                </button>
+                <button class="action-btn">
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                  </svg>
+                  Send
+                </button>
+                <button class="action-btn">
+                  <svg
+                    width="16"
+                    height="16"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                  </svg>
+                  Swap
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total Balance Card -->
+          <div class="total-card">
+            <div class="t-inner">
+              <h3 class="card-title" style="margin-bottom: 10px">
+                Total Balance
+                <span><i class="ri-information-line"></i></span>
+              </h3>
+              <div class="">
+                <div>
+                  <h3 class="amount-large">£241,570.00</h3>
+                  <p class="timestamp">September #012044, 2025 at 12:04PM</p>
+                </div>
+                <div class="link-btn">
+                  <button class="link-button">
+                    View Statement
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style="margin-left: 4px">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                  <br />
+                  <button class="link-button" style="margin-top: 1rem">
+                    Send Money
+                    <svg
+                      width="16"
+                      height="16"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      style="margin-left: 4px">
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Savings Account Card -->
+          <div class="saving-card">
+            <div style="display: flex; justify-content: space-between">
+              <h3 class="card-title" style="margin-bottom: 10px">
+                Savings Account
+                <span><i class="ri-information-line"></i></span>
+              </h3>
+              <a href="" style="font-size: 0.8rem; color: var(--blue-primary)"
+                >View Account</a
+              >
+            </div>
+            <div class="saving-content">
+              <div class="save-inner">
+                <div class="account-indicator">
+                  <!-- <div class="indicator-dot"></div> -->
+                  <input type="radio" checked>
+                  <span style="font-size: 14px; font-weight: 500"
+                    >Alder Franklin (******89654)</span
+                  >
+                </div>
+                <h3 class="amount-large">
+                  £241,570
+                  <span style="color: var(--muted-foreground); font-size: 20px"
+                    >GBP</span
+                  >
+                </h3>
+              </div>
+
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 15px;
+                  margin-bottom: 10px;
+                ">
+                <h3 class="card-title">Loans & Lines of Credits</h3>
+                <a href="" style="font-size: 0.8rem; color: var(--blue-primary)"
+                  >Pay Rate</a
+                >
+              </div>
+              <div
+                style="
+                  display: grid;
+                  grid-template-columns: 1fr 1fr;
+                  gap: 10px;
+                ">
+                <div class="save-inner">
+                  <div class="account-indicator">
+                    <!-- <div class="indicator-dot"></div> -->
+                    <input type="radio" checked>
+                    <span style="font-size: 14px; font-weight: 500"
+                      >Business Loan</span
+                    >
+                  </div>
+                  <h3 class="amount-large">
+                    +£8,450
+                    <span
+                      style="color: var(--muted-foreground); font-size: 20px"
+                      >GBP</span
+                    >
+                  </h3>
+                </div>
+                <div class="save-inner">
+                  <div class="account-indicator">
+                    <!-- <div class="indicator-dot"></div> -->
+                    <input type="radio" checked>
+                    <span style="font-size: 14px; font-weight: 500"
+                      >FICO® Score</span
+                    >
+                  </div>
+
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-around;
+                      align-items: center;
+                    ">
+                    <h3 class="amount-large">820</h3>
+                    <div class="fico-chart">
+                      <svg
+                        viewBox="0 0 100 100"
+                        style="transform: rotate(-90deg)">
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="40"
+                          fill="none"
+                          stroke="#e5e7eb"
+                          stroke-width="8"></circle>
+                        <circle
+                          cx="50"
+                          cy="50"
+                          r="40"
+                          fill="none"
+                          stroke="url(#gradient)"
+                          stroke-width="8"
+                          stroke-dasharray="251"
+                          stroke-dashoffset="50"
+                          stroke-linecap="round"></circle>
+                        <defs>
+                          <linearGradient
+                            id="gradient"
+                            x1="0%"
+                            y1="0%"
+                            x2="100%"
+                            y2="0%">
+                            <stop offset="0%" style="stop-color: #f59e0b" />
+                            <stop offset="50%" style="stop-color: #8b5cf6" />
+                            <stop offset="100%" style="stop-color: #10b981" />
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Virtual Card Section-->
+      <div class="container-two container">
+        <div class="account summary">
+          <!-- Section Header with Apply Button -->
+          <div class="section-header">
+            <div class="section-title-wrapper">
+              <h2>Virtual Card</h2>
+              <div class="title-underline"></div>
+            </div>
+            <button class="apply-btn">
+              <i class="ri-add-line"></i>
+              Apply for Card
+            </button>
+          </div>
+
+          <div class="virtual-card-grid">
+            <!-- Virtual Cards Statistics -->
+            <div class="">
+              <div class="card-header">
+                <h3 class="card-title">
+                  Virtual Cards Statistics
+                  <span><i class="ri-information-line"></i></span>
+                </h3>
+              </div>
+              <div
+                class="card-content"
+                style="padding-top: 0; padding-bottom: 0">
+                <div class="chart-wrapper">
+                  <div class="chart-legend">
+                    <div class="legend-item">
+                      <div class="legend-dot pink"></div>
+                      <span
+                        style="
+                          color: var(--muted-foreground);
+                          font-size: 0.8rem;
+                        "
+                        >Visa Card</span
+                      >
+                    </div>
+                    <div class="legend-item">
+                      <div class="legend-dot accent"></div>
+                      <span
+                        style="
+                          color: var(--muted-foreground);
+                          font-size: 0.8rem;
+                        "
+                        >Mastercard</span
+                      >
+                    </div>
+                    <div class="legend-item">
+                      <div class="legend-dot blue"></div>
+                      <span
+                        style="
+                          color: var(--muted-foreground);
+                          font-size: 0.8rem;
+                        "
+                        >Amex Card</span
+                      >
+                    </div>
+                  </div>
+
+                  <div class="donut-chart">
+                    <svg
+                      viewBox="0 0 100 100"
+                      style="transform: rotate(-90deg)">
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                        fill="none"
+                        stroke="#3b82f6"
+                        stroke-width="12"
+                        stroke-dasharray="75 251"></circle>
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                        fill="none"
+                        stroke="#ec4899"
+                        stroke-width="12"
+                        stroke-dasharray="94 251"
+                        stroke-dashoffset="-75"></circle>
+                      <circle
+                        cx="50"
+                        cy="50"
+                        r="40"
+                        fill="none"
+                        stroke="#8b5cf6"
+                        stroke-width="12"
+                        stroke-dasharray="82 251"
+                        stroke-dashoffset="-169"></circle>
+                    </svg>
+                    <h3 class="chart-center-text">$724.00</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Credit Card Carousel -->
+            <div class="card-carousel-wrapper">
+              <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <!-- Card 1 -->
+                  <div class="swiper-slide">
+                    <div class="credit-card card-red">
+                      <div class="card-logo">
+                        <div class="card-logo-circle circle-red"></div>
+                        <div class="card-logo-circle circle-orange"></div>
+                      </div>
+                      <div class="card-balance-top">$1,539</div>
+                      <div class="card-content-wrapper">
+                        <div class="card-number">
+                          <p>Card Number</p>
+                          <p>XXXX XXXX XXXX 1234</p>
+                        </div>
+                        <div class="card-details">
+                          <div class="card-holder">
+                            <p>Card Holder</p>
+                            <p>MARIA MYERS</p>
+                          </div>
+                          <div class="card-expiry">
+                            <p>Expires</p>
+                            <p>06/2027</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 2 -->
+                  <div class="swiper-slide">
+                    <div class="credit-card card-blue">
+                      <div class="card-logo">
+                        <div class="card-logo-circle circle-lightblue"></div>
+                        <div class="card-logo-circle circle-darkblue"></div>
+                      </div>
+                      <div class="card-balance-top">$2,450</div>
+                      <div class="card-content-wrapper">
+                        <div class="card-number">
+                          <p>Card Number</p>
+                          <p>XXXX XXXX XXXX 5678</p>
+                        </div>
+                        <div class="card-details">
+                          <div class="card-holder">
+                            <p>Card Holder</p>
+                            <p>JOHN DOE</p>
+                          </div>
+                          <div class="card-expiry">
+                            <p>Expires</p>
+                            <p>11/2025</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Card 3 -->
+                  <div class="swiper-slide">
+                    <div class="credit-card card-green">
+                      <div class="card-logo">
+                        <div class="card-logo-circle circle-lightgreen"></div>
+                        <div class="card-logo-circle circle-darkgreen"></div>
+                      </div>
+                      <div class="card-balance-top">$5,120</div>
+                      <div class="card-content-wrapper">
+                        <div class="card-number">
+                          <p>Card Number</p>
+                          <p>XXXX XXXX XXXX 9012</p>
+                        </div>
+                        <div class="card-details">
+                          <div class="card-holder">
+                            <p>Card Holder</p>
+                            <p>ALICE SMITH</p>
+                          </div>
+                          <div class="card-expiry">
+                            <p>Expires</p>
+                            <p>03/2026</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Account Managers Card -->
+            <div class="">
+              <div class="card-header">
+                <h3 class="card-title">
+                  Account & Card Managers
+                  <span><i class="ri-information-line"></i></span>
+                </h3>
+              </div>
+              <div class="card-content">
+                <div class="manager-header">
+                 <div class="avatar-group">
+                    <div class="avatar-small"><i class="ri-user-3-fill"></i></div>
+                    <div class="avatar-small"><i class="ri-user-3-fill"></i></div>
+                    <div class="avatar-small"><i class="ri-user-3-fill"></i></div>
+                    <div class="avatar-small"><i class="ri-user-3-fill"></i></div>
+                  </div>
+                </div>
+                <div class="count-cover">
+                  <div class="manager-count">
+                    <p class="count-number">5+</p>
+                    <p class="count-label">Managers</p>
+                  </div>
+
+                  <div class="nav-arrows">
+                    <button>
+                      <i class="ri-arrow-left-s-line"></i>
+                    </button>
+                    <button>
+                      <i class="ri-arrow-right-s-line"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="manager-card-item">
+                  <div class="manager-card-item-inner">
+                    <div class="manager-avatar">FB</div>
+                    <div class="manager-info">
+                      <p class="manager-name">
+                        Mr. Frederick Beaumont
+                        <span style="color: var(--success)">
+                          <i class="ri-checkbox-circle-fill"></i>
+                        </span>
+                      </p>
+                      <p class="manager-role">Call Center Manager</p>
+                      <button class="message-btn">
+                        <i class="ri-send-plane-2-fill"></i> Message
+                      </button>
+                    </div>
+                  </div>
+                  <div class="contact-options">
+                    <button class="contact-btn">
+                      <i class="ri-phone-line"></i> Call
+                    </button>
+                    <button class="contact-btn">
+                      <i class="ri-chat-3-line"></i> Chat
+                    </button>
+                    <button class="contact-btn">
+                      <i class="ri-mail-line"></i> Mail
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Account Summary-->
+      <div class="container-three container">
+        <div class="account-summary left-section">
+          <div class="section-title-wrapper">
+            <h2>Recent Transactions</h2>
+            <div class="title-underline"></div>
+          </div>
+
+          <!-- Header Actions -->
+          <div class="summary-header">
+            <div class="search-box">
+              <i class="ri-search-line"></i>
+              <input
+                type="text"
+                placeholder="Search Recent Transactions, Names, Account Number..." />
+            </div>
+            <div class="header-actions">
+              <button class="btn-icon" title="Refresh">
+                <i class="ri-refresh-line" style="font-size: 18px"></i>
+              </button>
+              <button class="btn-icon" title="Print">
+                <i class="ri-printer-line" style="font-size: 18px"></i>
+              </button>
+              <button class="btn btn-primary" id="generateStatementBtn">
+                <i class="ri-file-text-line"></i>
+                Generate Statement
+              </button>
+            </div>
+          </div>
+
+          <!-- Transaction Table -->
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>DATE</th>
+                  <th>STATUS</th>
+                  <th>TO</th>
+                  <th>NARRATION</th>
+                  <th>AMOUNT</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="date-cell">
+                    09/02/25
+                    <span class="time">12:33 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-complete">
+                      <i class="ri-checkbox-circle-fill"></i>
+                      Complete
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO Hilton Closing</small>
+                  </td>
+                  <td class="amount-positive">+$87,430.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="date-cell">
+                    09/02/25
+                    <span class="time">12:08 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-processing">
+                      <i class="ri-time-line"></i>
+                      Processing
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO Hilton Closing</small>
+                  </td>
+                  <td class="amount-negative">-£102,000.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="date-cell">
+                    08/02/25
+                    <span class="time">12:08 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-complete">
+                      <i class="ri-checkbox-circle-fill"></i>
+                      Complete
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO Hilton Closing</small>
+                  </td>
+                  <td class="amount-positive">+£55,000.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="date-cell">
+                    08/02/25
+                    <span class="time">12:05 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-complete">
+                      <i class="ri-checkbox-circle-fill"></i>
+                      Complete
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO ****** Closing</small>
+                  </td>
+                  <td class="amount-positive">+£115,800.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="date-cell">
+                    06/02/25
+                    <span class="time">08:35 PM</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-complete">
+                      <i class="ri-checkbox-circle-fill"></i>
+                      Complete
+                    </span>
+                  </td>
+                  <td>
+                    <strong>Bank of America(B O A)</strong><br />
+                    <small style="color: #6b7280">****••••••3384</small>
+                  </td>
+                  <td>
+                    <strong>INTERNATIONAL WIRE TRF</strong><br />
+                    <small style="color: #6b7280">FO Hilton Closing</small>
+                  </td>
+                  <td class="amount-negative">-£92,000.00</td>
+                  <td>
+                    <button class="more-btn">
+                      <i class="ri-more-2-fill" style="font-size: 18px"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div class="view-more">
+              <a href="#">
+                View more
+                <i class="ri-arrow-right-line"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="stock-card right-section">
+          <div class="stock-header">
+            <div class="tesla-logo">T</div>
+            <div class="stock-title">
+              Tesla, Inc
+              <div class="status-dot"></div>
+            </div>
+          </div>
+
+          <div class="price">$333.87</div>
+          <div class="trend">↑ 4.30% this week</div>
+
+          <div class="chart-area">
+            <canvas id="tslaChart"></canvas>
+          </div>
+        </div>
+      </div>
+      <!-- Generate Statement Modal -->
+      <div class="modal-overlay" id="statementModal">
+        <div class="modal">
+          <div class="modal-header">
+            <h3>Generate Statement</h3>
+            <button class="modal-close" id="closeModal">
+              <i class="ri-close-line"></i>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!-- Source Account -->
+            <div class="form-group">
+              <label class="form-label">
+                Source Account <span class="required">*</span>
+              </label>
+              <div class="radio-field">
+                <input
+                  type="radio"
+                  id="sourceAccount"
+                  name="account"
+                  checked
+                  disabled />
+                <label for="sourceAccount">Maria Myers (****58320)</label>
+                <i class="ri-bank-card-line" style="font-size: 20px"></i>
+              </div>
+            </div>
+
+            <!-- Start Year -->
+            <div class="form-group">
+              <label class="form-label">
+                Start Year <span class="required">*</span>
+              </label>
+              <select id="startYear">
+                <option value="">Select Year</option>
+                <option value="2020" selected>2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+              </select>
+            </div>
+
+            <!-- End Year -->
+            <div class="form-group">
+              <label class="form-label">
+                End Year <span class="required">*</span>
+              </label>
+              <select id="endYear">
+                <option value="">Select Year</option>
+                <option value="2020">2020</option>
+                <option value="2021">2021</option>
+                <option value="2022">2022</option>
+                <option value="2023">2023</option>
+                <option value="2024">2024</option>
+                <option value="2025" selected>2025</option>
+              </select>
+            </div>
+
+            <!-- Address Toggle -->
+            <div class="form-group">
+              <div class="toggle-field">
+                <span class="toggle-label">Address On Statement</span>
+                <label class="toggle-switch">
+                  <input type="checkbox" id="addressToggle" checked />
+                  <span class="toggle-slider"></span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Info Message -->
+            <div class="info-box">
+              <i class="ri-information-line"></i>
+              <p>
+                The following address will be shown and appear on the statement
+                of account for reference and correspondence purposes.
+              </p>
+            </div>
+
+            <!-- Address Display -->
+            <div class="form-group">
+              <div class="address-box active" id="addressBox">
+                <i class="ri-map-pin-line"></i>
+                <div class="address-text">
+                  Former Notre Dame Convent,<br />
+                  Ashton Square,<br />
+                  England, United Kingdom
+                </div>
+              </div>
+            </div>
+
+            <!-- Generate Button -->
+            <button class="btn-generate" id="generateBtn">
+              Generate
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+
+    <script>
+      // small chart like in screenshot
+      new Chart(document.getElementById("tslaChart"), {
+        type: "line",
+        data: {
+          labels: [
+            "2024/05/20",
+            "2024/05/21",
+            "2024/05/22",
+            "2024/05/23",
+            "2024/05/24",
+          ],
+          datasets: [
+            {
+              data: [320, 340, 350, 348, 333],
+              borderColor: "#3ab0ff",
+              backgroundColor: "rgba(58, 176, 255, 0.2)",
+              fill: true,
+              tension: 0.4,
+              borderWidth: 2,
+              pointRadius: 0,
+            },
+          ],
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { display: false },
+            y: { display: false },
+          },
+        },
+      });
+    </script>
+
+    <script src="../static/js/custom.js"></script>
+    <script src="../static/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Statement of Account</title>
+  
+  <!-- Remix Icons -->
+  <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet" />
+  
+  <!-- html2pdf library for PDF generation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="../static/css/statement.css">
+</head>
+<body>
+
+<!-- Page Header with Download Button -->
+<div class="page-header">
+  <button class="download-btn" id="downloadBtn">
+    <i class="ri-download-2-line"></i>
+    Download Statement
+  </button>
+</div>
+
+<!-- Statement Content -->
+<div class="statement-container" id="statementContent">
+  <!-- Header -->
+  <div class="statement-header">
+    <div class="company-info">
+      <div class="company-logo">
+        <div class="logo-icon">C</div>
+        <div>
+          <div class="logo-text">CAPITAL</div>
+          <div class="logo-subtext">DIGITAL</div>
+        </div>
+      </div>
+      <div class="company-address">
+        <strong>Capital Harbor Inc.</strong><br>
+        63 Boulevard Haussmann<br>
+        Paris, France<br>
+        75008, Paris
+      </div>
+    </div>
+
+    <div class="customer-service">
+      <div class="date-range">
+        From <strong id="displayStartYear">2020</strong> through to <strong id="displayEndYear">2025</strong>
+      </div>
+      <div class="account-number">
+        Primary Account: <strong id="displayAccountNumber">2091758320</strong>
+      </div>
+      <h3>Customer Service Information</h3>
+      <div class="contact-info">
+        <div>
+          <span class="contact-label">Website:</span>
+          <span>www.capitalharbor.online</span>
+        </div>
+        <div>
+          <span class="contact-label">Official Email:</span>
+          <span>support@capitalharbor.online</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Statement Title -->
+  <div class="statement-title">
+    <h1>Statement Of Account</h1>
+    <div class="title-underline"></div>
+  </div>
+
+  <!-- Account Details -->
+  <div class="account-details">
+    <div class="account-details-grid">
+      <div class="detail-item">
+        <div class="detail-label">Account Name:</div>
+        <div class="detail-value" id="displayAccountName">Maria Myers</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Currency:</div>
+        <div class="detail-value">$</div>
+      </div>
+    </div>
+    <div class="detail-item" id="addressSection">
+      <div class="detail-label">Address:</div>
+      <div class="detail-value" id="displayAddress">Former Notre Dame Convent, Ashton Square.</div>
+    </div>
+  </div>
+
+  <!-- Balance Summary -->
+  <div class="balance-summary">
+    <div class="balance-item">
+      <div class="balance-label">Opening Balance:</div>
+      <div class="balance-amount">$4,502,000 USD</div>
+    </div>
+    <div class="balance-item">
+      <div class="balance-label">Total Credit:</div>
+      <div class="balance-amount">$502,302 USD</div>
+    </div>
+    <div class="balance-item">
+      <div class="balance-label">Total Debit:</div>
+      <div class="balance-amount">$85,670 USD</div>
+    </div>
+  </div>
+
+  <div class="closing-balance">
+    <div class="balance-label">Closing Balance on May 03 2025:</div>
+    <div class="balance-amount">$4,945,670 USD</div>
+  </div>
+
+  <!-- Transaction Table -->
+  <div class="transaction-table">
+    <table>
+      <thead>
+        <tr>
+          <th>DATE</th>
+          <th>NARRATION</th>
+          <th>AMOUNT</th>
+          <th>REFERENCE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>18/08/25</td>
+          <td>
+            <strong>INTERNATIONAL WIRE TRF</strong><br>
+            <small>FO Hilton Closing</small>
+          </td>
+          <td class="amount-credit">+$87,430.00</td>
+          <td class="reference-cell">02f8m7598z068479</td>
+        </tr>
+        <tr>
+          <td>28/12/23</td>
+          <td>
+            <strong>INTERNATIONAL WIRE TRF</strong><br>
+            <small>FO Hilton Closing</small>
+          </td>
+          <td class="amount-debit">-£102,000.00</td>
+          <td class="reference-cell">02f8m7598z068479</td>
+        </tr>
+        <tr>
+          <td>28/07/22</td>
+          <td>
+            <strong>INTERNATIONAL WIRE TRF</strong><br>
+            <small>FO Hilton Closing</small>
+          </td>
+          <td class="amount-credit">+£55,000.00</td>
+          <td class="reference-cell">02f8m7598z068479</td>
+        </tr>
+        <tr>
+          <td>19/08/21</td>
+          <td>
+            <strong>INTERNATIONAL WIRE TRF</strong><br>
+            <small>FO ****** Closing</small>
+          </td>
+          <td class="amount-credit">+£115,800.00</td>
+          <td class="reference-cell">02f8m7598z068479</td>
+        </tr>
+        <tr>
+          <td>19/08/21</td>
+          <td>
+            <strong>INTERNATIONAL WIRE TRF</strong><br>
+            <small>FO Hilton Closing</small>
+          </td>
+          <td class="amount-debit">-£92,000.00</td>
+          <td class="reference-cell">02f8m7598z068479</td>
+        </tr>
+        <tr>
+          <td>18/12/20</td>
+          <td>
+            <strong>INTERNATIONAL WIRE TRF</strong><br>
+            <small>FO ****** Closing</small>
+          </td>
+          <td class="amount-credit">+€32,800.00</td>
+          <td class="reference-cell">02f8m7598z068479</td>
+        </tr>
+        <tr>
+          <td>23/10/20</td>
+          <td>
+            <strong>INTERNATIONAL WIRE TRF</strong><br>
+            <small>FO Hilton Closing</small>
+          </td>
+          <td class="amount-credit">+£135,200.00</td>
+          <td class="reference-cell">02f8m7598z068479</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer Information -->
+  <div class="footer-section">
+    <p>
+      This is your <strong>Statement of Account</strong> covering the period from <strong id="footerStartYear">2020</strong> to <strong id="footerEndYear">2025</strong>. 
+      If you did not request this statement, we strongly advise that you reset your password and contact our Support Center immediately at 
+      <strong>support@capitalharbor.online</strong>.
+    </p>
+    <br>
+    <p>
+      We value your trust in Capital Harbor Inc. Please be advised that under no circumstances will our institution:
+    </p>
+    <ul>
+      <li>Request your login password, transaction PIN, or OTP via email, phone, or SMS.</li>
+      <li>Ask you to share sensitive account details with third parties.</li>
+      <li>Redirect you to unofficial websites or payment channels.</li>
+    </ul>
+    <br>
+    <p>
+      Any communication suggesting otherwise should be reported immediately as suspicious.
+    </p>
+  </div>
+
+  <div class="footer-section">
+    <h4>Security Advisory:</h4>
+    <ul>
+      <li>Log out of your online banking session after use.</li>
+      <li>Ensure your devices are protected with up-to-date antivirus software.</li>
+      <li>Access your account only through our official website or mobile app.</li>
+    </ul>
+    <br>
+    <p>
+      Be cautious of phishing emails, text messages, service numbers, and unsolicited requests. When in doubt, contact us directly.
+    </p>
+  </div>
+
+  <div class="disclaimer">
+    <strong>DISCLAIMER:</strong><br>
+    This is a computer-generated document and does not require a handwritten signature. It constitutes an official summary of 
+    your transaction history and does not present any informal records. Please review the statement carefully. If you identify any discrepancies, 
+    notify us in writing within 14 calendar days of receipt. Failure to do so will be deemed as acceptance of the information provided.
+    <br><br>
+    All account activities are subject to the Bank's Terms and Conditions as well as prevailing financial regulations. Continued 
+    use of our services constitutes agreement to these policies.
+  </div>
+
+  <!-- Footer -->
+  <div class="statement-footer">
+    © 2025 Capital Digital. All rights reserved.
+  </div>
+</div>
+
+<script>
+  // Load statement data from sessionStorage
+  window.addEventListener('DOMContentLoaded', () => {
+    const statementData = JSON.parse(sessionStorage.getItem('statementData') || '{}');
+    
+    if (statementData.startYear) {
+      document.getElementById('displayStartYear').textContent = statementData.startYear;
+      document.getElementById('footerStartYear').textContent = statementData.startYear;
+    }
+    
+    if (statementData.endYear) {
+      document.getElementById('displayEndYear').textContent = statementData.endYear;
+      document.getElementById('footerEndYear').textContent = statementData.endYear;
+    }
+    
+    if (statementData.accountName) {
+      document.getElementById('displayAccountName').textContent = statementData.accountName;
+    }
+    
+    if (statementData.accountNumber) {
+      document.getElementById('displayAccountNumber').textContent = statementData.accountNumber;
+    }
+    
+    // Show/hide address based on toggle
+    if (!statementData.includeAddress) {
+      document.getElementById('addressSection').style.display = 'none';
+    } else if (statementData.address) {
+      document.getElementById('displayAddress').textContent = statementData.address;
+    }
+  });
+
+  // Download as PDF
+  document.getElementById('downloadBtn').addEventListener('click', () => {
+    const element = document.getElementById('statementContent');
+    const opt = {
+      margin: 0.5,
+      filename: `Statement_${new Date().getFullYear()}.pdf`,
+      image: { type: 'jpeg', quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    };
+
+    // Show loading state
+    const downloadBtn = document.getElementById('downloadBtn');
+    const originalHTML = downloadBtn.innerHTML;
+    downloadBtn.innerHTML = '<i class="ri-loader-4-line" style="animation: spin 1s linear infinite;"></i> Generating PDF...';
+    downloadBtn.disabled = true;
+
+    // Generate PDF
+    html2pdf().set(opt).from(element).save().then(() => {
+      downloadBtn.innerHTML = originalHTML;
+      downloadBtn.disabled = false;
+    });
+  });
+
+  // Add spin animation for loader
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  `;
+  document.head.appendChild(style);
+</script>
+
+</body>
+</html>

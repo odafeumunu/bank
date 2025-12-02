@@ -1,0 +1,429 @@
+:root {
+  --blue-primary: #003d82;
+  --blue-dark: #002147;
+  --pink: #ff6b9d;
+  --green: #22c55e;
+  --red: #ef4444;
+  --gray-light: #f8f9fa;
+  --gray-medium: #e5e7eb;
+  --gray-dark: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: var(--blue-primary);
+  padding: 2rem 1rem;
+}
+
+.page-header {
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.download-btn {
+  background: var(--pink);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s;
+}
+
+.download-btn:hover {
+  background: #ff5a8a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn i {
+  font-size: 20px;
+}
+
+/* Statement Container */
+.statement-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.statement-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--gray-medium);
+}
+
+.company-info {
+  flex: 1;
+}
+
+.company-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.logo-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--blue-primary);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 24px;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.logo-subtext {
+  font-size: 14px;
+  color: var(--gray-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.company-address {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--gray-dark);
+}
+
+.customer-service {
+  text-align: right;
+}
+
+.date-range {
+  font-size: 13px;
+  color: var(--gray-dark);
+  margin-bottom: 0.5rem;
+}
+
+.account-number {
+  font-size: 13px;
+  color: var(--gray-dark);
+  margin-bottom: 1.5rem;
+}
+
+.customer-service h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.contact-info {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--gray-dark);
+}
+
+.contact-info div {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.contact-label {
+  font-weight: 600;
+  min-width: 80px;
+}
+
+/* Statement Title */
+.statement-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.statement-title h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 0.5rem;
+}
+
+.title-underline {
+  width: 100px;
+  height: 3px;
+  background: var(--blue-primary);
+  margin: 0 auto;
+}
+
+/* Account Details */
+.account-details {
+  background: var(--gray-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.account-details-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detail-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.detail-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--blue-dark);
+}
+
+/* Balance Summary */
+.balance-summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.balance-item {
+  flex: 1;
+  text-align: center;
+}
+
+.balance-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-dark);
+  margin-bottom: 0.5rem;
+}
+
+.balance-amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--blue-dark);
+}
+
+.closing-balance {
+  background: var(--blue-primary);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.closing-balance .balance-label {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+}
+
+.closing-balance .balance-amount {
+  color: white;
+  font-size: 24px;
+}
+
+/* Transaction Table */
+.transaction-table {
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--blue-primary);
+  color: white;
+}
+
+th {
+  padding: 1rem;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--gray-medium);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--gray-light);
+}
+
+td {
+  padding: 1rem;
+  font-size: 13px;
+}
+
+.amount-credit {
+  color: var(--green);
+  font-weight: 600;
+}
+
+.amount-debit {
+  color: var(--red);
+  font-weight: 600;
+}
+
+.reference-cell {
+  font-family: "Courier New", monospace;
+  font-size: 11px;
+  color: var(--gray-dark);
+}
+
+/* Footer Sections */
+.footer-section {
+  margin-bottom: 2rem;
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--gray-dark);
+}
+
+.footer-section h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--blue-dark);
+  margin-bottom: 0.75rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.footer-section ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--blue-primary);
+  font-weight: 700;
+}
+
+.disclaimer {
+  background: var(--gray-light);
+  padding: 1.5rem;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--gray-dark);
+  margin-bottom: 2rem;
+}
+
+.disclaimer strong {
+  color: var(--blue-dark);
+}
+
+.statement-footer {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 2px solid var(--gray-medium);
+  font-size: 12px;
+  color: var(--gray-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem 0.5rem;
+  }
+
+  .statement-container {
+    padding: 1.5rem;
+  }
+
+  .statement-header {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .customer-service {
+    text-align: left;
+  }
+
+  .contact-info div {
+    justify-content: flex-start;
+  }
+
+  .account-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .balance-summary {
+    flex-direction: column;
+  }
+
+  table {
+    font-size: 11px;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    padding: 0;
+  }
+
+  .page-header {
+    display: none;
+  }
+
+  .statement-container {
+    box-shadow: none;
+    padding: 1rem;
+  }
+}
